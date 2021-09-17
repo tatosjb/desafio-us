@@ -1,45 +1,50 @@
-import React, { useEffect } from 'react';
-import logo from './logo.png';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import './App.css'
+import Layout from './components/Layout'
 
 // you should feel free to reorganize the code however you see fit
 // including creating additional folders/files and organizing your
 // components however you would like.
 
-function App(){
+function fullName(member) {
+  return `${member.first_name}${member.middle_name ? ` ${member.middle_name} ` : ''} ${member.last_name}`
+}
+
+function App() {
+  const [members, setMembers] = useState([])
+
   useEffect(() => {
-    const session = 115; // 115th congressional session
-    const chamber = 'senate'; // or 'house'
+    const session = 115 // 115th congressional session
+    const chamber = 'senate' // or 'house'
 
     // sample API call
-    fetch(`https://api.propublica.org/congress/v1/${session}/${chamber}/members.json`, {
-      headers: new Headers({
-        'X-API-Key': 'd0ywBucVrXRlMQhENZxRtL3O7NPgtou2mwnLARTr',
-      }),
-    })
+    fetch(
+      `https://api.propublica.org/congress/v1/${session}/${chamber}/members.json`,
+      {
+        headers: new Headers({
+          'X-API-Key': 'd0ywBucVrXRlMQhENZxRtL3O7NPgtou2mwnLARTr',
+        }),
+      },
+    )
       .then((res) => res.json())
       .then((json) => json.results[0].members)
       .then((members) => {
-        // array of congressperson JSON objects
+        setMembers(members)
       })
       .catch(() => {
         // catch errors
-      });
-  })
+      })
+  }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">React Programming Exercise</h1>
-      </header>
+    <Layout>
       <section className="container">
-        {/*
-           Your app should render this part of the page.
-         */}
+        {members.map(member => {
+          return <label key={member.id}>{fullName(member)}</label>
+        })}
       </section>
-    </div>
-  );
+    </Layout>
+  )
 }
 
-export default App;
+export default App
