@@ -1,0 +1,15 @@
+:local(.icon) {
+  font-size: 30px;
+
+  svg {
+    margin-left: 0.5vw;
+  }
+}
+
+:local(.disabled) {
+  color: gray;
+
+  &:hover {
+    color: gray;
+  }
+}
