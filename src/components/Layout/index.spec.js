@@ -25,7 +25,7 @@ describe('Layout', () => {
       </Layout>), container)
     })
 
-    expect(container.querySelector('h1')).toHaveTextContent('React Programming Exercise')
-    expect(container.querySelector('#children')).toHaveTextContent('CHILDREN')
+    expect(container.querySelector('h1')).toHaveTextContent(/React Programming Exercise$/)
+    expect(container.querySelector('#children')).toHaveTextContent(/CHILDREN$/)
   })
 })

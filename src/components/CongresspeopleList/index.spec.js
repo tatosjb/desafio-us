@@ -69,7 +69,7 @@ describe('CongresspeopleList', () => {
 
     expect(cards).toHaveLength(3)
 
-    expect(cards[0].querySelector('h5')).toHaveTextContent('Lamar Alexander')
+    expect(cards[0].querySelector('h5')).toHaveTextContent(/Lamar Alexander$/)
     expect(cards[0].querySelector('p:first-child')).toHaveTextContent('Party: R')
     expect(cards[0].querySelector('p:nth-child(2)')).toHaveTextContent('State: TN')
     expect(cards[0].querySelector('p:nth-child(3)')).toHaveTextContent('Can apply from 2020')
@@ -77,7 +77,7 @@ describe('CongresspeopleList', () => {
     expect(cards[0].querySelectorAll('footer a')[1]).toHaveAttribute('href', 'https://facebook.com/senatorlamaralexander')
     expect(cards[0].querySelectorAll('footer a')[2]).toHaveAttribute('href', 'https://youtube.com/user/lamaralexander')
 
-    expect(cards[1].querySelector('h5')).toHaveTextContent('Tammy Middle Name Baldwin')
+    expect(cards[1].querySelector('h5')).toHaveTextContent(/Tammy Middle Name Baldwin$/)
     expect(cards[1].querySelector('p:first-child')).toHaveTextContent('Party: D')
     expect(cards[1].querySelector('p:nth-child(2)')).toHaveTextContent('State: WI')
     expect(cards[1].querySelector('p:nth-child(3)')).toHaveTextContent('Can apply from 2018')
@@ -85,7 +85,7 @@ describe('CongresspeopleList', () => {
     expect(cards[1].querySelectorAll('footer a')[1]).toHaveAttribute('href', 'https://facebook.com/senatortammybaldwin')
     expect(cards[1].querySelectorAll('footer a')[2]).toHaveAttribute('href', 'https://youtube.com/user/witammybaldwin')
 
-    expect(cards[2].querySelector('h5')).toHaveTextContent('John Barrasso')
+    expect(cards[2].querySelector('h5')).toHaveTextContent(/John Barrasso$/)
     expect(cards[2].querySelector('p:first-child')).toHaveTextContent('Party: R')
     expect(cards[2].querySelector('p:nth-child(2)')).toHaveTextContent('State: WY')
     expect(cards[2].querySelector('p:nth-child(3)')).toHaveTextContent('Can apply from 2018')
