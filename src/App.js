@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Layout from './components/Layout'
+import CongresspeopleTable from './components/CongresspeopleList'
 
 // you should feel free to reorganize the code however you see fit
 // including creating additional folders/files and organizing your
 // components however you would like.
-
-function fullName(member) {
-  return `${member.first_name}${member.middle_name ? ` ${member.middle_name} ` : ''} ${member.last_name}`
-}
 
 function App() {
   const [members, setMembers] = useState([])
@@ -39,9 +36,7 @@ function App() {
   return (
     <Layout>
       <section className="container">
-        {members.map(member => {
-          return <label key={member.id}>{fullName(member)}</label>
-        })}
+        <CongresspeopleTable congresspeople={members} />
       </section>
     </Layout>
   )
