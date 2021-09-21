@@ -1,12 +1,12 @@
 import React from 'react'
-import Layout from '.'
+import LayoutBase from '.'
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from 'react-dom/test-utils'
 
 
 let container = null
 
-describe('Layout', () => {
+describe('LayoutBase', () => {
   beforeEach(() => {
     container = document.createElement('div')
     document.body.appendChild(container)
@@ -20,9 +20,9 @@ describe('Layout', () => {
 
   it('renders children below header', () => {
     act(() => {
-      render((<Layout profile="sample">
+      render((<LayoutBase profile="sample">
         <div id="children">CHILDREN</div>
-      </Layout>), container)
+      </LayoutBase>), container)
     })
 
     expect(container.querySelector('h1')).toHaveTextContent(/React Programming Exercise$/)

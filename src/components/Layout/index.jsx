@@ -1,10 +1,13 @@
-import Header from '../Header'
+import LayoutBase from './Base'
+import LayoutBody from './Body'
+import useFetchCongresspeople from '../../hooks/Congresspeople'
 
-export default function Layout({ children }) {
+export default function Layout() {
+  const members = useFetchCongresspeople()
+
   return (
-    <div className="App">
-      <Header />
-      {children}
-    </div>
+    <LayoutBase>
+      <LayoutBody members={members} />
+    </LayoutBase>
   )
 }
