@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    'jest/globals': true
   },
   extends: [
     'eslint:recommended',
@@ -14,11 +15,16 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'jest'],
   rules: {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     semi: [2, 'never'],
-    quotes: ['error', 'single']
+    quotes: ['error', 'single'],
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error'
   },
 }
