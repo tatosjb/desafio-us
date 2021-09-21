@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import Layout from './components/Layout'
 import CongresspeopleTable from './components/CongresspeopleList'
+import { fetchMembers } from './services/prorepublica'
 
 // you should feel free to reorganize the code however you see fit
 // including creating additional folders/files and organizing your
@@ -15,16 +16,7 @@ function App() {
     const chamber = 'senate' // or 'house'
 
     // sample API call
-    fetch(
-      `https://api.propublica.org/congress/v1/${session}/${chamber}/members.json`,
-      {
-        headers: new Headers({
-          'X-API-Key': 'd0ywBucVrXRlMQhENZxRtL3O7NPgtou2mwnLARTr',
-        }),
-      },
-    )
-      .then((res) => res.json())
-      .then((json) => json.results[0].members)
+    fetchMembers(session, chamber)
       .then((members) => {
         setMembers(members)
       })
