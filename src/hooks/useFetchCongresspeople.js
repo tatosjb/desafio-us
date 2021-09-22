@@ -13,8 +13,8 @@ export default function useFetchCongresspeople() {
       .then(members => {
         setMembers(members)
       })
-      .catch(() => {
-        // catch errors
+      .catch(error => {
+        console.error(error)
       })
   }, [])
 
