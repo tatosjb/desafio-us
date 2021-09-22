@@ -1,10 +1,7 @@
 import TwitterButton from '../TwitterButton'
 import FacebookButton from '../FacebookButton'
 import YouTubeButton from '../YoutubeButton'
-
-function fullName(congressperson) {
-  return `${congressperson.first_name}${congressperson.middle_name ? ` ${congressperson.middle_name} ` : ''} ${congressperson.last_name}`
-}
+import { fullName } from '../../services/congress-person'
 
 export default function CongresspeopleList({ congresspeople }) {
   return (

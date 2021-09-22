@@ -22,7 +22,7 @@ module.exports = {
     semi: [2, 'never'],
     quotes: ['error', 'single'],
     'jest/no-disabled-tests': 'warn',
-    'jest/no-focused-tests': 'error',
+    'jest/no-focused-tests': 'off',
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error'
