@@ -27,8 +27,7 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
-      "not op_myarn up -R eslintini all"
+      "not dead"
     ],
     "development": [
       "last 1 chrome version",
