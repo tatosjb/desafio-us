@@ -31,7 +31,7 @@ const secondSenator = {
   senate_class: '2'
 }
 
-const congressPeople = [
+const congresspeople = [
   firstSenator,
   secondSenator,
 ]
@@ -39,7 +39,7 @@ const congressPeople = [
 const response = {
   results: [
     {
-      members: congressPeople
+      members: congresspeople
     }
   ],
 }
@@ -70,7 +70,7 @@ describe('.useFetchCongressPeople', () => {
     await waitForNextUpdate()
 
     expect(fetch).toHaveBeenCalledTimes(1)
-    expect(state.current).toEqual(congressPeople)
+    expect(state.current).toEqual(congresspeople)
   })
 
   it('returns a filtered result when send a filter as a prop', async () => {

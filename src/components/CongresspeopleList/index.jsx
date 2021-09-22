@@ -11,7 +11,7 @@ export default function CongresspeopleList({ congresspeople }) {
             <div key={congressperson.id} className="col-12 col-sm-6 col-lg-4 mt-4">
                 <div className="card">
                   <header className="card-header">
-                    <h5 className="card-title">{fullName(congressperson)}</h5>
+                    <h5 className="card-title" role="header">{fullName(congressperson)}</h5>
                   </header>
                   <div className="card-body text-start">
                     <p className="card-text">Party: <strong>{congressperson.party}</strong></p>
