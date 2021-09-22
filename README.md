@@ -14,7 +14,7 @@ We have added a little bit of code to the `App` component to show a sample call 
 
 Implement a simple list view which contains for each congressperson: a full name, social media links, party, their district/state, and the next year in which they are up for election. Additionally, you should implement the following functionality:
 
-[ ] An input for searching for Senators or Representatives by name.
+[x] An input for searching for Senators or Representatives by name.
 [ ] UI for filtering congresspeople by various characteristics (e.g. party, year of next election, gender, etc)
 [ ] Simple client-side pagination (optional: make the # of results per page configurable)
 [ ] A way to change the parameters that are being passed to the API -- i.e. chamber (`house` or `senate`) and congressional session (the default should be the current, `115`), and reload the list with the new data.

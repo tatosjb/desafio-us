@@ -10,6 +10,7 @@ export default function FilterInput({ value, onChange }) {
           <div className="input-group-text" role="button">
             <i className="fas fa-search" />
           </div>
+
           <Input value={value} onChange={onChange} />
         </div>
       </div>
